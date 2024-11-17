@@ -14,7 +14,7 @@ import { validationSchema } from "./constants";
 import { signUp } from "../../APIs";
 import Snackbar from "@mui/material/Snackbar";
 import HomePage from "../HomePage";
-import LoadingButton from "@mui/lab/LoadingButton";
+import Button from "@mui/material/Button";
 
 function SignUp() {
   const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -131,16 +131,15 @@ function SignUp() {
                 />
               </Grid>
             </Grid>
-            <LoadingButton
+            <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               disabled={!formik.isValid || !formik.dirty}
-              loading={isLoading}
             >
               Sign Up
-            </LoadingButton>
+            </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">

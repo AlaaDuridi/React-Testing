@@ -2,6 +2,7 @@
   "name": "react-testing-library-demo-with-msw",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000/api/",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -73,4 +74,5 @@
     "@babel/preset-typescript": "^7.24.6",
     "@babel/types": "^7.15.0"
   }
+
 }

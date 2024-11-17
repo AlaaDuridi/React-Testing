@@ -1,7 +1,5 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://lib.brocali.co/api/";
-
 export interface UserForRegistration {
   username: string;
   email: string;
