@@ -1,8 +1,8 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.realworld.io/api/";
+axios.defaults.baseURL = "https://lib.brocali.co/api/";
 
-interface UserForRegistration {
+export interface UserForRegistration {
   username: string;
   email: string;
   password: string;
@@ -17,6 +17,16 @@ export interface User {
 }
 export type GenericErrors = Record<string, string[]>;
 
-export async function signUp(user: UserForRegistration): Promise<User | GenericErrors> {
-  return axios.post("users", { user });
+export async function signUp(
+  user: UserForRegistration,
+): Promise<Pick<User, "token"> | GenericErrors> {
+  const mappedUser = {
+    name: user.username,
+    email: user.email,
+    password: user.password,
+    password_confirmation: user.password,
+    institute_id: 1,
+    phone: "987",
+  };
+  return axios.post("register", { mappedUser });
 }
